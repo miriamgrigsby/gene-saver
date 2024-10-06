@@ -1,0 +1,8 @@
+version: "3"
+
+tasks:
+  execute:
+    dir: '{{.USER_WORKING_DIR}}'
+    desc: Executes main.go file
+    cmds:
+      - go run . 
