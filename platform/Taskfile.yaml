@@ -5,4 +5,12 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     desc: Executes main.go file
     cmds:
-      - go run . 
+      - cd resolver && go run . 
+  build-image:
+    desc: builds docker image
+    cmds:
+      - docker build -t gene-saver-platform .
+  run-app:
+    desc: runs go application on port 8081
+    cmds:
+      - docker run -it -p 8081:8081 gene-saver-platform
