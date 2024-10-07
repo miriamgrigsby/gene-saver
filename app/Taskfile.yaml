@@ -1,0 +1,11 @@
+version: "3"
+
+tasks:
+  build-image:
+    desc: builds docker image
+    cmds:
+      - docker build -t gene-saver-app .
+  run-app:
+    desc: runs vue application on port 8081
+    cmds:
+      - docker run -it -p 8081:81 gene-saver-app

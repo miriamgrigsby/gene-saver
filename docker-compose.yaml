@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    hostname: localhost
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: pGNCNDwr54sOmztNgzYf
+      POSTGRES_USER: postgres
+      POSTGRES_DB: platform
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data_store
+  golangapp:
+    build: ./platform
+    ports:
+      - 9992:81
+    depends_on:
+      - postgres
+  client:
+    build: ./app
+    command: nginx -g 'daemon off;'
+    volumes:
+        - ./app/:/usr/src/app
+        - /usr/src/app/node_modules
+    ports:
+        - "8080:80"
+    depends_on:
+      - postgres
+      - golangapp
