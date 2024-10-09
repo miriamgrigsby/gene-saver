@@ -1,0 +1,2 @@
+# migrate -source file:migrations -database postgres://postgres:pGNCNDwr54sOmztNgzYf@platform-instance-1.cracooqk0d98.us-east-2.rds.amazonaws.com:5432/postgres up 2
+# docker run --net=host --rm -it  -e PGPASSWORD=pGNCNDwr54sOmztNgzYf  postgres:latest psql -h platform-instance-1.cracooqk0d98.us-east-2.rds.amazonaws.com -p 5432 -U postgres postgres
