@@ -31,6 +31,8 @@
 - added Taskfiles for easier dev
 - added pre-commit hooks for golang/vue code for consistency
 - setup migrations with golang-migrate/migrate, use BEGIN and COMMIT to allow rolling back transactions, tested up and down migrations function properly
+- setup dummy endpoints for connectivity testing
+- deployed golang app to kubernetes successfully, 2 pods, port-forwarding works, but something is wrong with localhost
 
 
 ## Project MVP:
