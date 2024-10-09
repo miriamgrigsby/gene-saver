@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment # Type of Kubernetes resource
+metadata:
+  name: gene-saver-platform
+spec:
+  replicas: 2 # Number of pods to run at any given time
+  selector:
+    matchLabels:
+      app: gene-saver-platform
+  template:
+    metadata:
+      labels:
+        app: gene-saver-platform
+    spec:
+      containers:
+      - name: gene-saver-platform
+        image: miriamgrigsby/gene-saver-platform:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 4040  # Should match the port number that the Go application listens on
+        livenessProbe:           # To check the health of the Pod
+          httpGet:
+            path: /health
+            port: 4040
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 15
+          timeoutSeconds: 5
+        readinessProbe:          # To check if the Pod is ready to serve traffic or not
+          httpGet:
+            path: /readiness
+            port: 4040
+            scheme: HTTP
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
