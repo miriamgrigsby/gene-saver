@@ -17,12 +17,12 @@ spec:
         image: miriamgrigsby/gene-saver-app:1.0.0
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: 4040  # Should match the port number that the Go application listens on
+          - containerPort: 8081  # Should match the port number that the Go application listens on
         # TODO wire these up in vue app
         # livenessProbe:           # To check the health of the Pod
         #   httpGet:
         #     path: /health
-        #     port: 4040
+        #     port: 8081
         #     scheme: HTTP
         #   initialDelaySeconds: 5
         #   periodSeconds: 15
@@ -30,7 +30,7 @@ spec:
         # readinessProbe:          # To check if the Pod is ready to serve traffic or not
         #   httpGet:
         #     path: /readiness
-        #     port: 4040
+        #     port: 8081
         #     scheme: HTTP
         #   initialDelaySeconds: 5
         #   timeoutSeconds: 1
