@@ -18,15 +18,23 @@ func main() {
 
 	// Add a home endpoint with a welcome message
 	router.GET("/", welcome)
-
+	// todo add readiness and liveness probes endpoints
+	router.GET("/", health)
+	router.GET("/", readiness)
 	router.GET("/albums", getAlbums)
 
-	router.Run("localhost:4040")
+	router.Run("0.0.0.0:4040")
 }
 
 // welcome responds with a welcome message.
 func welcome(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, gin.H{"message": "Welcome to my Go API app!"})
+}
+func health(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, gin.H{"message": "IM ALIVE!"})
+}
+func readiness(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, gin.H{"message": "IM READY!"})
 }
 
 // albums slice to seed record album data.

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gene-saver-platform
-        image: miriamgrigsby/gene-saver-platform:1.0.0
+        image: miriamgrigsby/gene-saver-platform:1.0.3
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 4040  # Should match the port number that the Go application listens on
