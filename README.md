@@ -30,6 +30,7 @@
 - dockerize the vue/golang app and local postgres via docker volume, once I get the vue and golang apps connected, I should be able to update the docker-compose with any missing elements so I can dev more quickly
 - added Taskfiles for easier dev
 - added pre-commit hooks for golang/vue code for consistency
+- setup migrations with golang-migrate/migrate, use BEGIN and COMMIT to allow rolling back transactions, tested up and down migrations function properly
 
 
 ## Project MVP:
