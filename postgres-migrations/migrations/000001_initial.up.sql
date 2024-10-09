@@ -1,0 +1,10 @@
+BEGIN;
+
+CREATE SCHEMA portfolio;
+CREATE SCHEMA member;
+CREATE SCHEMA genetics;
+CREATE SCHEMA mutations;
+
+GRANT CREATE ON SCHEMA public TO public;
+
+COMMIT;
