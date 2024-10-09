@@ -19,8 +19,8 @@ func main() {
 	// Add a home endpoint with a welcome message
 	router.GET("/", welcome)
 	// todo add readiness and liveness probes endpoints
-	router.GET("/", health)
-	router.GET("/", readiness)
+	router.GET("/health", health)
+	router.GET("/readiness", readiness)
 	router.GET("/albums", getAlbums)
 
 	router.Run("0.0.0.0:4040")
