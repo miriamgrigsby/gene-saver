@@ -32,7 +32,9 @@
 - added pre-commit hooks for golang/vue code for consistency
 - setup migrations with golang-migrate/migrate, use BEGIN and COMMIT to allow rolling back transactions, tested up and down migrations function properly
 - setup dummy endpoints for connectivity testing
-- deployed golang app to kubernetes successfully, 2 pods, port-forwarding works, but something is wrong with localhost
+- deployed golang app to kubernetes successfully, 2 pods per service, created services, ingresses and an ingress controller with helm to enable the pods to talk to one another and access the application outside of the cluster. Confirmed I can curl the endpoints
+- used a jump host to setup Datagrip to talk to my RDS instance for easier postgres development
+- fixed docker compose problem when devving within the ec2 instance that was blocking localhost for the vue app
 
 
 ## Project MVP:
