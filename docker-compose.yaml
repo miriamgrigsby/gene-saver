@@ -14,7 +14,7 @@ services:
   golangapp:
     build: ./platform
     ports:
-      - 9992:81
+      - 4040:4040
     depends_on:
       - postgres
   client:

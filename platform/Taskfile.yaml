@@ -5,7 +5,7 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     desc: Executes main.go file
     cmds:
-      - cd resolver && go run .
+      - go run .
   build-image:
     desc: builds docker image
     cmds:

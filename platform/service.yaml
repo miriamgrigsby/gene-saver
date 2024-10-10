@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: gene-saver-platform
+spec:
+  selector:
+      app: gene-saver-platform
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 4040
