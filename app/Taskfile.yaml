@@ -6,6 +6,6 @@ tasks:
     cmds:
       - docker build -t gene-saver-app .
   run-app:
-    desc: runs vue application on port 8081
+    desc: runs vue application on port 8080
     cmds:
-      - docker run -it -p 8081:81 gene-saver-app
+      - docker run -it -p 8080:80 gene-saver-app
