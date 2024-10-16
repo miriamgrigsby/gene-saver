@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gene-saver-app
-        image: miriamgrigsby/gene-saver-app:1.0.3
+        image: miriamgrigsby/gene-saver-app:1.0.7
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 80  # Should match the port number that the Vue application listens on

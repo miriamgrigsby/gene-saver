@@ -6,10 +6,14 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+      - 52.14.26.113
+      secretName: gene-saver-tls
   rules:
   - http:
       paths:
-      - path: /testpath
+      - path: /gene-saver-app
         pathType: Prefix
         backend:
           service:
